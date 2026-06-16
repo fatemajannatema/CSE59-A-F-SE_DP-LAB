@@ -17,7 +17,7 @@ public class User{
 }
 
 
-class EmailValidator{
+public class EmailValidator{
     
     public static boolean isValid(String email){
         return email != null && email.contains("@");
@@ -25,7 +25,7 @@ class EmailValidator{
 }
 
 
-class UserRepository{
+public class UserRepository{
     
     public void save(User user) {
         if (EmailValidator.isValid(user.getEmail())){
@@ -35,5 +35,14 @@ class UserRepository{
         }else{
             System.out.println("Invalid email format.");
         }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        User user = new User("john_doe", "john@example.com");
+
+        UserRepository repository = new UserRepository();
+        repository.save(user);
     }
 }
