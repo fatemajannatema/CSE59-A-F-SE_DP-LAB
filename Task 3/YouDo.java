@@ -1,4 +1,4 @@
-public class User{
+class User{
     private String username;
     private String email;
     
@@ -17,7 +17,7 @@ public class User{
 }
 
 
-public class EmailValidator{
+class EmailValidator{
     
     public static boolean isValid(String email){
         return email != null && email.contains("@");
@@ -25,7 +25,7 @@ public class EmailValidator{
 }
 
 
-public class UserRepository{
+class UserRepository{
     
     public void save(User user) {
         if (EmailValidator.isValid(user.getEmail())){
